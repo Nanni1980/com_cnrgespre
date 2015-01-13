@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_cnrgespre</name>
+    <creationDate>2015-01-13</creationDate>
+    <copyright>Copyright (C) 2015. Tutti i diritti riservati.</copyright>
+    <license>GNU General Public License versione 2 o successiva; vedi LICENSE.txt</license>
+    <author>Todaro Giovanni &amp; Pensato Alessandro</author>
+    <authorEmail>giovanni.todaro@cnr.it</authorEmail>
+    <authorUrl>http://www.cnr.it</authorUrl>
+    <version>2.0.0</version>
+    <description>Gestionale Presenze CNR</description>
+    
+    <scriptfile>script.php</scriptfile>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>cnrgespre.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_cnrgespre.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_cnrgespre.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_cnrgespre/assets/images/s_com_cnrgespre.png" >COM_CNRGESPRE</menu>
+        <submenu>
+            
+			<menu link="option=com_cnrgespre&amp;view=utenti" view="utenti" img="components/com_cnrgespre/assets/images/s_utenti.png" alt="Cnrgespre/Utenti">COM_CNRGESPRE_TITLE_UTENTI</menu>
+
+			<menu link="option=com_cnrgespre&amp;view=giustificativi" view="giustificativi" img="components/com_cnrgespre/assets/images/s_giustificativi.png" alt="Cnrgespre/Giustificativi">COM_CNRGESPRE_TITLE_GIUSTIFICATIVI</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>cnrgespre.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_cnrgespre.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_cnrgespre.sys.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_cnrgespre.ini</language>
+			<language tag="it-IT">it-IT/it-IT.com_cnrgespre.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="cnrgespre"/>
+    </plugins>
+    <modules>
+		<module module="mod_cnrgespre" />
+	</modules>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

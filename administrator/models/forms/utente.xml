@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_CNRGESPRE_FORM_LBL_UTENTE_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="codicefiscale" type="text"
+                
+            label="COM_CNRGESPRE_FORM_LBL_UTENTE_CODICEFISCALE"
+            description="COM_CNRGESPRE_FORM_DESC_UTENTE_CODICEFISCALE" 
+                
+                
+                
+            filter="string"
+            size="16"
+            maxlength="16" /> 
+
+       <field name="utentesistema" type="user"
+                
+            label="COM_CNRGESPRE_FORM_LBL_UTENTE_UTENTESISTEMA"
+            description="COM_CNRGESPRE_FORM_DESC_UTENTE_UTENTESISTEMA" 
+                
+                
+                 /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_CNRGESPRE_FORM_LBL_UTENTE_CREATED_BY"
+            description="COM_CNRGESPRE_FORM_DESC_UTENTE_CREATED_BY"  /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" /> 
+
+ </fieldset> 
+
+ <fieldset 
+                        name="accesscontrol">
+                       <field name="asset_id" type="hidden" filter="unset" />
+                       <field name="rules"
+                            type="rules"
+                            label="JFIELD_RULES_LABEL"
+                            translate_label="false"
+                            filter="rules"
+                            validate="rules"
+                            class="inputbox"
+                            component="com_cnrgespre"
+                            section="utente"
+                        />
+
+	</fieldset>
+
+</form>

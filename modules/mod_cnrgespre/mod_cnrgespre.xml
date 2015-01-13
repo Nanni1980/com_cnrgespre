@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" method="upgrade" client="site">
+    <name>MOD_CNRGESPRE_NAME</name>
+    <creationDate>2015-01-13</creationDate>
+    <copyright>Copyright (C) 2015. Tutti i diritti riservati.</copyright>
+    <license>GNU General Public License versione 2 o successiva; vedi LICENSE.txt</license>
+    <author>Todaro Giovanni &amp; Pensato Alessandro</author>
+    <authorEmail>giovanni.todaro@cnr.it</authorEmail>
+    <authorUrl>http://www.cnr.it</authorUrl>
+    <version>2.0.0</version>
+    <description>MOD_CNRGESPRE_DESCRIPTION</description>
+    
+    <files>
+        <filename module="mod_cnrgespre">mod_cnrgespre.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+    <languages folder="../../languages/modules/mod_cnrgespre">
+        
+			<language tag="en-GB">en-GB/en-GB.mod_cnrgespre.ini</language>
+			<language tag="en-GB">en-GB/en-GB.mod_cnrgespre.sys.ini</language>
+			<language tag="it-IT">it-IT/it-IT.mod_cnrgespre.ini</language>
+			<language tag="it-IT">it-IT/it-IT.mod_cnrgespre.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset 
+                name="content_type" 
+                label="MOD_CNRGESPRE_CONTENT_TYPE_TAB_LBL"
+                description="MOD_CNRGESPRE_CONTENT_TYPE_TAB_DESC">
+                <field
+                    name="content_type" type="list"
+                    label="MOD_CNRGESPRE_CONTENT_TYPE_LBL"
+                    description="MOD_CNRGESPRE_CONTENT_TYPE_DESC">
+                    <option value="blank">MOD_CNRGESPRE_CUSTOM_CONTENT</option>
+                    <option value="list">MOD_CNRGESPRE_LIST</option>
+                    <option value="item">MOD_CNRGESPRE_ITEM</option>
+                </field>
+            </fieldset>
+            <fieldset 
+                name="blank_content" 
+                label="MOD_CNRGESPRE_CUSTOM_CONTENT_TAB_LBL"
+                description="MOD_CNRGESPRE_CUSTOM_CONTENT_TAB_DESC">
+                <field 
+                    name="html_content" type="editor" filter="safehtml"
+                    label="MOD_CNRGESPRE_HTML_LBL"
+                    description="MOD_CNRGESPRE_HTML_DESC" />
+            </fieldset>
+            <fieldset 
+                name="list_content" 
+                label="MOD_CNRGESPRE_LIST_CONTENT_TAB_LBL"
+                description="MOD_CNRGESPRE_LIST_CONTENT_TAB_DESC">
+                <field
+                    name="table" type="list"
+                    label="MOD_CNRGESPRE_TABLE_LBL"
+                    description="MOD_CNRGESPRE_TABLE_DESC">
+                    
+	<option value="#__cnrgespre_utenti">#__cnrgespre_utenti</option>
+	<option value="#__cnrgespre_giustificativi">#__cnrgespre_giustificativi</option>
+                </field>
+                <field 
+                    name="field" type="groupedlist" default=""
+                    label="MOD_CNRGESPRE_FIELD_LBL"
+                    description="MOD_CNRGESPRE_FIELD_DESC">
+                    
+	<group label="#__cnrgespre_utenti">
+		<option value="id">id</option>
+		<option value="codicefiscale">codicefiscale</option>
+		<option value="utentesistema">utentesistema</option>
+		<option value="created_by">created_by</option>
+	</group>
+	<group label="#__cnrgespre_giustificativi">
+		<option value="id">id</option>
+		<option value="created_by">created_by</option>
+		<option value="codicecnr">codicecnr</option>
+		<option value="titolo">titolo</option>
+		<option value="descrizione">descrizione</option>
+		<option value="applicazione">applicazione</option>
+		<option value="tipo">tipo</option>
+		<option value="soglia">soglia</option>
+		<option value="attribuzionebuonipasto">attribuzionebuonipasto</option>
+	</group>
+                </field>
+                <field 
+                    name="offset" type="text" default="0" filter="uint" class="input-small"
+                    label="MOD_CNRGESPRE_OFFSET_LBL"
+                    description="MOD_CNRGESPRE_OFFSET_DESC" />
+                <field 
+                    name="limit" type="text" default="10" filter="uint" class="input-small"
+                    label="MOD_CNRGESPRE_LIMIT_LBL"
+                    description="MOD_CNRGESPRE_LIMIT_DESC" />
+            </fieldset>
+            <fieldset 
+                name="item_content" 
+                label="MOD_CNRGESPRE_ITEM_CONTENT_TAB"
+                description="MOD_CNRGESPRE_ITEM_CONTENT_TAB_DESC">
+                <field
+                    name="item_table" type="list"
+                    label="MOD_CNRGESPRE_TABLE_LBL"
+                    description="MOD_CNRGESPRE_TABLE_DESC">
+                    
+	<option value="#__cnrgespre_utenti">#__cnrgespre_utenti</option>
+	<option value="#__cnrgespre_giustificativi">#__cnrgespre_giustificativi</option>
+                </field>
+                <field 
+                    name="item_id" type="text" filter="uint" class="input-small"
+                    label="MOD_CNRGESPRE_ITEM_ID_LBL"
+                    description="MOD_CNRGESPRE_ITEM_ID_DESC"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

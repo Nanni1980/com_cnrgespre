@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_CREATED_BY"
+            description="COM_CNRGESPRE_FORM_DESC_GIUSTIFICATIVO_CREATED_BY"  /> 
+
+       <field name="codicecnr" type="text"
+                
+            label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_CODICECNR"
+            description="COM_CNRGESPRE_FORM_DESC_GIUSTIFICATIVO_CODICECNR" 
+                
+                
+                 required="true"  /> 
+
+       <field name="titolo" type="text"
+                
+            label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_TITOLO"
+            description="COM_CNRGESPRE_FORM_DESC_GIUSTIFICATIVO_TITOLO" 
+                
+                
+                 required="true" 
+            filter="string" /> 
+
+       <field name="descrizione" type="editor"
+                
+            label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_DESCRIZIONE"
+            description="COM_CNRGESPRE_FORM_DESC_GIUSTIFICATIVO_DESCRIZIONE" 
+                
+                
+                
+            cols="5"
+            rows="3" /> 
+
+       <field name="applicazione" type="radio" buttons="true"
+                                                class="btn-group btn-group-yesno" default="1"
+        
+        
+            label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_APPLICAZIONE"
+            description="COM_CNRGESPRE_FORM_DESC_GIUSTIFICATIVO_APPLICAZIONE" ><option value="1">COM_CNRGESPRE_GIUSTIFICATIVI_APPLICAZIONE_OPTION_ON</option><option value="0">COM_CNRGESPRE_GIUSTIFICATIVI_APPLICAZIONE_OPTION_OFF</option></field> 
+
+       <field name="applicazione" type="text" size="40" class="inputbox"
+        
+            label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_APPLICAZIONE"
+            description="COM_CNRGESPRE_FORM_DESC_GIUSTIFICATIVO_APPLICAZIONE" 
+        
+        
+         required="true" 
+        filter="safehtml" /> 
+
+       <field name="tipo" type="radio"
+                
+            label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_TIPO"
+            description="COM_CNRGESPRE_FORM_DESC_GIUSTIFICATIVO_TIPO" 
+                 default="2" 
+                
+                 required="true" 
+            option_on="Contatore"
+            option_off="Completamento">
+                <option value="0">Contatore</option>
+                <option value="1">Completamento</option>
+                <option value="2">Standard</option>
+        </field> 
+
+ 
+		<field name="filter_tipo" type="list" onchange="this.form.submit();">
+			<option value="">COM_CNRGESPRE_GIUSTIFICATIVI_TIPO_FILTER</option>
+			<option value="0">Contatore</option>
+			<option value="1">Completamento</option>
+			<option value="2">Standard</option>
+		</field> 
+
+       <field name="soglia" type="text"
+                
+            label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_SOGLIA"
+            description="COM_CNRGESPRE_FORM_DESC_GIUSTIFICATIVO_SOGLIA" 
+                
+                
+                
+            menu_published="0"
+            filter="int"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="attribuzionebuonipasto" type="radio" buttons="true"
+                                                class="btn-group btn-group-yesno" default="1"
+        
+        
+            label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_ATTRIBUZIONEBUONIPASTO"
+            description="COM_CNRGESPRE_FORM_DESC_GIUSTIFICATIVO_ATTRIBUZIONEBUONIPASTO" ><option value="1">COM_CNRGESPRE_GIUSTIFICATIVI_ATTRIBUZIONEBUONIPASTO_OPTION_ON</option><option value="0">COM_CNRGESPRE_GIUSTIFICATIVI_ATTRIBUZIONEBUONIPASTO_OPTION_OFF</option></field> 
+
+       <field name="attribuzionebuonipasto" type="text" size="40" class="inputbox"
+        
+            label="COM_CNRGESPRE_FORM_LBL_GIUSTIFICATIVO_ATTRIBUZIONEBUONIPASTO"
+            description="COM_CNRGESPRE_FORM_DESC_GIUSTIFICATIVO_ATTRIBUZIONEBUONIPASTO" 
+        
+        
+         required="true" 
+        filter="safehtml" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>
